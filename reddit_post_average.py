@@ -12,10 +12,7 @@ driver = webdriver.Chrome(chrome_options=options)
 driver.get('https://reddit.com/')
 assert "reddit: the front page of the internet" in driver.title
 
-
 # This gets average vote count per subreddit
-#
-#
 def get_avg_vote(sub_link_name):
 	driver.find_element_by_link_text(sub_link_name).click()
 	upvote_count = driver.find_elements_by_css_selector(".score.unvoted")
